@@ -1,0 +1,12 @@
+/* .img-padding {
+    padding: 2em;
+} */
+
+.show {
+    display: inline-block;
+    text-align: center;
+}
+
+.image {
+    display: block;
+}
