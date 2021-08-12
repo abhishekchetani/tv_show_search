@@ -2,11 +2,13 @@
     padding: 2em;
 } */
 
+/* div element class for each image from JS code */
 .show {
     display: inline-block;
     text-align: center;
 }
 
+/* img element class for show image from JS code */
 .image {
     display: block;
 }
