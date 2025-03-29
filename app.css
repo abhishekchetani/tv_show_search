@@ -2,13 +2,26 @@
     padding: 2em;
 } */
 
-/* div element class for each image from JS code */
-.show {
-    display: inline-block;
-    text-align: center;
+h3 {
+	margin: 5px 0;
+	color: #333;
+	font-size: 1.2em;
 }
 
-/* img element class for show image from JS code */
+span {
+	font-size: 0.8em;
+	color: #666;
+}
+
+/* div element class for each image from JS code */
+.show {
+	display: inline-block;
+	text-align: center;
+	padding: 1.2em;
+	margin: 0.5em;
+}
+
+/* img element class for show's image from JS code */
 .image {
-    display: block;
+	display: block;
 }
