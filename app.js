@@ -6,7 +6,7 @@ const sendRequest = async query => {
 		const config = { params: { q: query } };
 
 		// API Request using Axios with 'CONFIG'
-		const res = await axios.get("http://api.tvmaze.com/search/shows", config);
+		const res = await axios.get("https://api.tvmaze.com/search/shows", config);
 
 		// Passing Response Array to the Function
 		displayShows(res.data);
@@ -55,7 +55,10 @@ const displayShows = shows => {
 	try {
 		for (let result of shows) {
 			// If Enough Data Exists For A Show, Then Append It To Webpage
-			if (result.show.image && result.show.network) {
+			if (
+				result.show.image &&
+				(result.show.network || result.show.webChannel)
+			) {
 				const show = document.createElement("div");
 				// Adding .show class to newly created 'div'
 				show.classList.add("show");
@@ -84,7 +87,10 @@ const displayShows = shows => {
 
 				// Available Source/Channel for every Result
 				const network = document.createElement("span");
-				network.append(` - ${result.show.network.name}`);
+				const source = result.show.network
+					? result.show.network.name
+					: result.show.webChannel.name;
+				network.append(` - ${source}`);
 				// Inserting 'span' after 'h3' element
 				showName.insertAdjacentElement("afterend", network);
 
